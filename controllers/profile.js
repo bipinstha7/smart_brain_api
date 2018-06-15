@@ -12,4 +12,23 @@ const handleProfile = (req, res) => {
   .catch(err => res.status(400).json('something went wrong'));
 }
 
-module.exports = {handleProfile: handleProfile};
+const handleProfileUpdate = (req, res, db) => {
+  const {id} = req.params;
+  const {name, age, pet} = req.body.formInput;
+  db('users')
+    .where({id})
+    .update({name})
+    .then(response => {
+      if(response) {
+        res.json("update success");
+      } else {
+        res.status(400).json("unable to update");
+      }
+    })
+    .catch(err => res.status(400).json("error updating user"));
+};
+
+module.exports = {
+  handleProfile: handleProfile,
+  handleProfileUpdate
+}; 
