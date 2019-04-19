@@ -5,7 +5,7 @@ const handleProfile = (req, res) => {
     if(user.length) {
       res.json(user);
     } else {
-      res.status(400).json("error getting user");
+      res.status(400).json("error on getting user");
     }
     
   })
