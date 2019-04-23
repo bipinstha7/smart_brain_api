@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.json(database.users));
 
+/* TODO: make separate module for routers */
 app.post("/signin", (req, res) => {signin.handleSignin(req, res,db,bcrypt)});
 
 app.post("/register", (req, res) => {register.handleRegister(req, res, db, bcrypt)});
