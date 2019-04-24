@@ -21,4 +21,7 @@ const handleSignin = (req, res, db, bcrypt) => {
 }
 
 
-module.exports = { handleSignin: handleSignin };
+// module.exports = { handleSignin: handleSignin };
+
+// es6 destruturing
+module.exports = { handleSignin };
