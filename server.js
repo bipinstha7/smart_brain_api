@@ -10,7 +10,7 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
-
+// TODO: get host, user, password and database from config file
 const db = knex({
   client: 'pg',
   connection: {
